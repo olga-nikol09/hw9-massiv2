@@ -28,8 +28,12 @@ public class Main {
     public static void task2 () {
         System.out.println("Задача2");
         int[] spending = generateRandomArray();
-        int maxSpending = 0;
-        int minSpending = 200_000;
+        int maxSpending = spending[0];
+        int minSpending = spending[0];
+        if (spending.length == 0) {
+            maxSpending = 0;
+            minSpending = 0;
+        }
         for (int i = 0; i < spending.length; i++) {
             if (spending[i] > maxSpending) {
                 maxSpending = spending[i];
@@ -47,8 +51,8 @@ public class Main {
         double sum = 0;
         for (int index = 0; index < spending.length; index++) {
             sum += spending[index];
-            everageSpending = sum / spending.length;
         }
+        everageSpending = sum / spending.length;
         System.out.println("Средняя сумма трат за месяц составила " + everageSpending + " рублей");
     }
     public static void task4 () {
